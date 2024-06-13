@@ -1,7 +1,7 @@
 // Template code is for testing and example import purposes
-import fibs from "./fibonacchi/fibonacchi";
-// import mergeSort from "./merge_sort/merge_sort.js";
+import fibs from "./fibonacci/fibonacci.js";
+// Import mergeSort from "./merge_sort/merge_sort.js";
 
-// console.log(mergeSort([2, 4, 1, 7, 9]));
+// Console.log(mergeSort([2, 4, 1, 7, 9]));
 
-console.log(fibs(6));
+console.log(fibs(8));
