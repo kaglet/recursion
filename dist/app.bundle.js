@@ -21,22 +21,25 @@ function getRightHalf(array) {
     return array.slice(length / 2, length);
   } else {
     // right half always bigger than left half of array
-    return array.slice(0, Math.ceil(length / 2));
+    return array.slice(Math.floor(length / 2), length);
   }
 }
 
 function merge(array1, array2) {
-  let i,
-    j,
-    k = 0;
-  let mergedArr = new Array(array1.length + array2.length);
+  let i = 0;
+  let j = 0;
+  let k = 0;
+  let mergedArr = [];
 
-  while (k < mergedArr.length) {
-    if (array1[i] < array2[j]) {
-      mergedArr[k] === array1[i];
+  while (k < array1.length + array2.length) {
+    if (
+      array1[i] < array2[j] ||
+      (array2[j] === undefined && array1[i] !== undefined)
+    ) {
+      mergedArr.push(array1[i]);
       i++;
     } else {
-      mergedArr[k] === array2[j];
+      mergedArr.push(array2[j]);
       j++;
     }
     k++;
@@ -62,7 +65,7 @@ function mergeSort(array) {
 // Template code is for testing and example import purposes
 
 
-console.log(merge_sort([2, 4, 1, 7, 9, 3]));
+console.log(merge_sort([2, 4, 1, 7, 9]));
 
 /******/ })()
 ;
